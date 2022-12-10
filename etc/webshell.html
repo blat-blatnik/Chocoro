@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<title>Chocoro</title>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+		<meta name="title" content="Chocoro">
+		<meta name="description" content="Action packed platformer starring Chocoro: The Bouncy Cat">
+		<meta name="keywords" content="videogame, game, action, platformer, speedrunning, raylib">
+		<meta name="viewport" content="width=device-width">
+
+		<meta property="og:title" content="Chocoro">
+		<meta property="og:image:type" content="image/png">
+		<meta property="og:image" content="https://github.com/blat-blatnik/Pictomage/blob/main/screenshots/title.png">
+		<meta property="og:url" content="https://blatnik.itch.io/pictomage">
+		<meta property="og:description" content="Action packed platformer starring Chocoro: The Bouncy Cat">
+
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Chocoro">
+		<meta name="twitter:image" content="https://github.com/blat-blatnik/Pictomage/blob/main/screenshots/title.png">
+		<meta name="twitter:url" content="https://blatnik.itch.io/pictomage">
+		<meta name="twitter:description" content="Action packed platformer starring Chocoro: The Bouncy Cat">
+
+		<style>
+			body { margin: 0; border: 0; }
+			canvas.emscripten { margin: 0; border: 0; background-color: black; }
+		</style>
+	</head>
+	<body>
+		<canvas class=emscripten id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
+		<p id="output" />
+		<script>
+			var Module = {
+				print: function(text) { console.log(text); },
+				canvas: document.getElementById('canvas'),
+			};
+		</script>
+		{{{ SCRIPT }}}
+	</body>
+</html>

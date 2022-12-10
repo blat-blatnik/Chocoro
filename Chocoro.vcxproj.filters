@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\game.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\microui.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="LICENSE" />
+    <None Include="README.md" />
+    <None Include="web_build.bat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="web_run.bat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="etc\webshell.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\raylib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\raymath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rlgl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\microui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="etc\debug.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\raylib_win.lib" />
+    <Library Include="lib\libraylib_web.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="etc\icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\chocoro.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\balloon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\floor0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\chocoro-zapped.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\zap.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\gaser.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bottle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\chocoro-exhausted.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\exit0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\entrance0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\gun.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\gunner-aiming.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\gunner-idle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\beam-start.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\beam.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\chocoro-dead.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\lightning0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\lightning1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\lightning2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\castle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mouse-hold.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mouse-click.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall9.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall10.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall11.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall12.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall13.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall14.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall15.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall17.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall18.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall19.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall20.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall21.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall22.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall23.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline47.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline9.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline10.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline11.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline12.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline13.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline14.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline15.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline17.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline18.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline19.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline20.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline21.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline22.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline23.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline24.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline25.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline26.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline27.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline28.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline29.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline30.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline31.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline32.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline33.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline34.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline35.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline36.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline37.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline38.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline39.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline40.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline41.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline42.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline43.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline44.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline45.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline46.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime17.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime9.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime10.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime11.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime12.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime13.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime14.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime15.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\floor3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\floor1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\floor2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet25.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet9.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet10.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet11.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet12.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet13.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet14.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet15.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet17.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet18.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet19.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet20.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet21.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet22.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet23.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\carpet24.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime18.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime19.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\wall24.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline48.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trampoline49.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime20.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="etc\resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="res\roboto.ttf" />
+    <Font Include="res\alkhemikal.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="res\pop.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\dash.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\slime0.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\slime1.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\trampoline.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\wall.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\zap.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\laser-charge.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\laser-beam.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\bottle.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\gas.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\ping.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\hit.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\ghost.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\computer-love.mp3" />
+    <Media Include="res\thunder0.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="res\thunder1.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
+</Project>
