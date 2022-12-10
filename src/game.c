@@ -3359,6 +3359,8 @@ void Initialize(void)
 	thunder1Sound = LoadSound("thunder1.wav");
 	SetSoundVolume(thunder1Sound, 0.5f);
 
+	//DisableCursor();
+
 	if (Debug.on)
 	{
 		SerializeLevel(LOAD);
@@ -3366,7 +3368,6 @@ void Initialize(void)
 	}
 	else
 		gameState = GAME_STATE_Splash;
-	//gameState = GAME_STATE_Credits;
 }
 void Update(void)
 {

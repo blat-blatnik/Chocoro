@@ -36,6 +36,87 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="etc\webshell.html" />
+    <None Include="res\level0.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level1.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level2.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level3.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level4.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level5.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level6.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level7.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level8.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level9.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level10.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level11.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level12.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level13.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level14.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level15.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level16.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level17.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level18.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level19.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level20.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level21.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level22.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level23.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level24.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level25.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\level26.bin">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\raylib.h">
@@ -504,6 +585,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\slime20.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\title.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

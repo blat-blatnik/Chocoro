@@ -130,6 +130,33 @@
     <None Include="etc\webshell.html" />
     <None Include="LICENSE" />
     <None Include="README.md" />
+    <None Include="res\level0.bin" />
+    <None Include="res\level1.bin" />
+    <None Include="res\level10.bin" />
+    <None Include="res\level11.bin" />
+    <None Include="res\level12.bin" />
+    <None Include="res\level13.bin" />
+    <None Include="res\level14.bin" />
+    <None Include="res\level15.bin" />
+    <None Include="res\level16.bin" />
+    <None Include="res\level17.bin" />
+    <None Include="res\level18.bin" />
+    <None Include="res\level19.bin" />
+    <None Include="res\level2.bin" />
+    <None Include="res\level20.bin" />
+    <None Include="res\level21.bin" />
+    <None Include="res\level22.bin" />
+    <None Include="res\level23.bin" />
+    <None Include="res\level24.bin" />
+    <None Include="res\level25.bin" />
+    <None Include="res\level26.bin" />
+    <None Include="res\level3.bin" />
+    <None Include="res\level4.bin" />
+    <None Include="res\level5.bin" />
+    <None Include="res\level6.bin" />
+    <None Include="res\level7.bin" />
+    <None Include="res\level8.bin" />
+    <None Include="res\level9.bin" />
     <None Include="web_build.bat" />
     <None Include="web_run.bat" />
   </ItemGroup>
@@ -149,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="etc\icon.ico" />
+    <Image Include="pic\title.png" />
     <Image Include="res\balloon.png">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
