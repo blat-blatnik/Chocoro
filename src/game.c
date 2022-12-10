@@ -3361,12 +3361,12 @@ void Initialize(void)
 
 	//DisableCursor();
 
-	if (Debug.on)
-	{
-		SerializeLevel(LOAD);
-		gameState = GAME_STATE_Playing;
-	}
-	else
+	//if (Debug.on)
+	//{
+	//	SerializeLevel(LOAD);
+	//	gameState = GAME_STATE_Playing;
+	//}
+	//else
 		gameState = GAME_STATE_Splash;
 }
 void Update(void)

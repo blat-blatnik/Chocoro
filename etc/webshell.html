@@ -3,39 +3,127 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
 		<title>Chocoro</title>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
-
 		<meta name="title" content="Chocoro">
-		<meta name="description" content="Action packed platformer starring Chocoro the Bouncy Cat">
+		<meta name="description" content="Action packed 2D platformer starring Chocoro the Bouncy Cat">
 		<meta name="keywords" content="videogame, game, action, platformer, speedrunning, raylib">
 		<meta name="viewport" content="width=device-width">
-
 		<meta property="og:title" content="Chocoro">
 		<meta property="og:image:type" content="image/png">
 		<meta property="og:image" content="https://raw.githubusercontent.com/blat-blatnik/Chocoro/main/pic/title.png">
 		<meta property="og:url" content="https://blatnik.itch.io/pictomage">
-		<meta property="og:description" content="Action packed platformer starring Chocoro the Bouncy Cat">
-
+		<meta property="og:description" content="Action packed 2D platformer starring Chocoro the Bouncy Cat">
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:title" content="Chocoro">
 		<meta name="twitter:image" content="https://raw.githubusercontent.com/blat-blatnik/Chocoro/main/pic/title.png">
 		<meta name="twitter:url" content="https://blatnik.itch.io/pictomage">
 		<meta name="twitter:description" content="Action packed platformer starring Chocoro the Bouncy Cat">
-
 		<style>
-			body { margin: 0; border: 0; }
-			canvas.emscripten { margin: 0; border: 0; background-color: black; }
+			body {
+				font-family: arial;
+				margin: 0;
+				padding: none;
+			}
+			.emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
+			div.emscripten { text-align: center; }
+			canvas.emscripten { border: 0px none; background-color: black; }
+			.spinner {
+				height: 30px;
+				width: 30px;
+				margin: 0;
+				margin-top: 20px;
+				margin-left: 20px;
+				display: inline-block;
+				vertical-align: top;
+				-webkit-animation: rotation .8s linear infinite;
+				-moz-animation: rotation .8s linear infinite;
+				-o-animation: rotation .8s linear infinite;
+				animation: rotation 0.8s linear infinite;
+				border-left: 5px solid rgb(235, 235, 235);
+				border-right: 5px solid rgb(235, 235, 235);
+				border-bottom: 5px solid rgb(235, 235, 235);
+				border-top: 5px solid rgb(120, 120, 120);
+				border-radius: 100%;
+				background-color: rgb(254, 160, 15);
+			}
+			@-webkit-keyframes rotation {
+				from {-webkit-transform: rotate(0deg);}
+				to {-webkit-transform: rotate(360deg);}
+			}
+			@-moz-keyframes rotation {
+				from {-moz-transform: rotate(0deg);}
+				to {-moz-transform: rotate(360deg);}
+			}
+			@-o-keyframes rotation {
+				from {-o-transform: rotate(0deg);}
+				to {-o-transform: rotate(360deg);}
+			}
+			@keyframes rotation {
+				from {transform: rotate(0deg);}
+				to {transform: rotate(360deg);}
+			}
+			#status {
+				display: inline-block;
+				vertical-align: top;
+				margin-top: 30px;
+				margin-left: 20px;
+				font-weight: bold;
+				color: rgb(120, 120, 120);
+			}
+			#progress {
+				height: 20px;
+				width: 300px;
+			}
 		</style>
 	</head>
 	<body>
-		<canvas class=emscripten id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
-		<p id="output" />
-		<script>
+		<div class="spinner" id='spinner'></div>
+		<div class="emscripten" id="status">Downloading...</div>
+		<div class="emscripten">
+			<progress value="0" max="100" id="progress" hidden=1></progress>
+		</div>
+		<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
+
+		<script type='text/javascript'>
+			var statusElement = document.getElementById('status');
+			var progressElement = document.getElementById('progress');
+			var spinnerElement = document.getElementById('spinner');
+
 			var Module = {
 				print: function(text) { console.log(text); },
 				canvas: document.getElementById('canvas'),
+				setStatus: function(text) {
+					if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
+					if (text === Module.setStatus.last.text) return;
+					var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
+					var now = Date.now();
+					if (m && now - Module.setStatus.last.time < 30) return; // if this is a progress update, skip it if too soon
+					Module.setStatus.last.time = now;
+					Module.setStatus.last.text = text;
+					if (m) {
+						text = m[1];
+						progressElement.value = parseInt(m[2])*100;
+						progressElement.max = parseInt(m[4])*100;
+						progressElement.hidden = false;
+						spinnerElement.hidden = false;
+					} else {
+						progressElement.value = null;
+						progressElement.max = null;
+						progressElement.hidden = true;
+						if (!text) spinnerElement.style.display = 'none';
+					}
+					statusElement.innerHTML = text;
+				},
+			};
+			Module.setStatus('Downloading...');
+			window.onerror = function(event) {
+				// TODO: do not warn on ok events like simulating an infinite loop or exitStatus
+				Module.setStatus('Exception thrown, see JavaScript console');
+				spinnerElement.style.display = 'none';
+				Module.setStatus = function(text) {
+					if (text) console.error('[post-exception status] ' + text);
+				};
 			};
 		</script>
 		{{{ SCRIPT }}}
