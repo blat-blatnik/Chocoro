@@ -176,6 +176,10 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="etc\icon.ico" />
+    <Image Include="pic\level4.gif" />
+    <Image Include="pic\level6.gif" />
+    <Image Include="pic\lightning.gif" />
+    <Image Include="pic\title.gif" />
     <Image Include="pic\title.png" />
     <Image Include="res\balloon.png">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>

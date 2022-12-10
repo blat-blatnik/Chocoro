@@ -590,6 +590,18 @@
     <Image Include="pic\title.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="pic\level4.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\level6.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\lightning.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\title.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="etc\resources.rc">
