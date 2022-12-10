@@ -596,7 +596,7 @@
     <Image Include="pic\level6.gif">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="pic\lightning.gif">
+    <Image Include="pic\level18.gif">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="pic\title.gif">
