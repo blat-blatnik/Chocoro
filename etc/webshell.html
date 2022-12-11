@@ -12,12 +12,12 @@
 		<meta property="og:title" content="Chocoro">
 		<meta property="og:image:type" content="image/png">
 		<meta property="og:image" content="https://raw.githubusercontent.com/blat-blatnik/Chocoro/main/pic/title.png">
-		<meta property="og:url" content="https://blatnik.itch.io/pictomage">
+		<meta property="og:url" content="https://blatnik.itch.io/chocoro">
 		<meta property="og:description" content="Action packed 2D platformer starring Chocoro the Bouncy Cat">
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:title" content="Chocoro">
 		<meta name="twitter:image" content="https://raw.githubusercontent.com/blat-blatnik/Chocoro/main/pic/title.png">
-		<meta name="twitter:url" content="https://blatnik.itch.io/pictomage">
+		<meta name="twitter:url" content="https://blatnik.itch.io/chocoro">
 		<meta name="twitter:description" content="Action packed platformer starring Chocoro the Bouncy Cat">
 		<style>
 			body {
@@ -66,7 +66,7 @@
 			#status {
 				display: inline-block;
 				vertical-align: top;
-				margin-top: 30px;
+				margin-top: 0px;
 				margin-left: 20px;
 				font-weight: bold;
 				color: rgb(120, 120, 120);
@@ -111,6 +111,9 @@
 						progressElement.value = null;
 						progressElement.max = null;
 						progressElement.hidden = true;
+						statusElement.hidden = true;
+						if (!text) statusElement.style.display = 'none';
+						if (!text) progressElement.style.display = 'none';
 						if (!text) spinnerElement.style.display = 'none';
 					}
 					statusElement.innerHTML = text;
