@@ -1,10 +1,14 @@
 # Chocoro
 
-Submission for the [Raylib 9 years gamejam](https://itch.io/jam/raylib-9-years-gamejam).
+Action packed 2D platformer starring Chocoro the Bouncy Cat. Made in 1 week for the [Raylib 9 YEARS gamejam](https://itch.io/jam/raylib-9-years-gamejam). Play it in your browser on [itch.io](https://blatnik.itch.io/chocoro).
+
+<p align="center">
+	<img src="./pic/title.gif" alt="Screenshot" width="512"/>
+</p>
 
 ### Controls
 
-The game can be controlled entirely with the mouse or with a touchscreen. Although you can also use a keyboard. If you want to try the level editor you will need to use the keyboard.
+The game can be controlled entirely with the mouse or with a touchscreen. If you want to try the level editor you will need to use the keyboard.
 
 | Key                                      | Function     |
 | ---------------------------------------- | ------------ |
@@ -27,6 +31,8 @@ The game can be controlled entirely with the mouse or with a touchscreen. Althou
 | <kbd>1</kbd> .. <kbd>5</kbd> | Cycle through tiles        |
 
 ## Credits
+
+The coding and level design was done by Blat Blatnik. The art was made by Olga Ważny.
 
 | what?               | where?                                                    | who?                                                         | how?                                                         |
 | ------------------- | --------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -58,8 +64,10 @@ The game can be controlled entirely with the mouse or with a touchscreen. Althou
 
 ## Level file format
 
+This is what is stored in the binary level files. Mostly here so I don't forget.
+
 ```c
-int version;
+int version; // always 1
 uint8_t tiles[32][32][2]; // [0] = tile, [1] = tile variant.
 float chocoroX;
 float chocoroY;
