@@ -1,6 +1,10 @@
 #include "engine.h"
 
 //TODO
+// [ ] fix getting stuck when entering levels
+// [ ] fix text highlighting in browser
+// [ ] fix screen size on phones
+// [ ] fix old trampoline and slime tiles in some levels
 // [ ] try no freeze frames
 // [-] squash (it doesn't look nice)
 
