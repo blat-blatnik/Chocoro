@@ -5,6 +5,9 @@
 // [ ] fix text highlighting in browser
 // [ ] fix screen size on phones
 // [ ] fix old trampoline and slime tiles in some levels
+// [ ] add corner slime tile for some levels
+// [ ] add different entrance and exit directions
+// [ ] add red entrance and exit variants
 // [ ] try no freeze frames
 // [-] squash (it doesn't look nice)
 
