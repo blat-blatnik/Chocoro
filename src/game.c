@@ -1,15 +1,15 @@
 #include "engine.h"
 
 //TODO
-// [ ] fix getting stuck when entering levels
+// [ ] controller support
+// [ ] make it easier to unstick from carpets and slime
+// [+] fix getting stuck when entering levels
 // [ ] fix text highlighting in browser
 // [ ] fix screen size on phones
 // [+] fix old trampoline and slime tiles in some levels
 // [+] add corner slime tile for some levels
 // [+] add different entrance and exit directions
 // [ ] add red entrance and exit variants
-// [ ] try no freeze frames
-// [-] squash (it doesn't look nice)
 
 // Constants
 
@@ -2402,6 +2402,24 @@ void LevelTransition_Update(void)
 		chocoro.zapFrames = zapFrames;
 		TileIsPassable[TILE_ENTRANCE] = true;
 		TileIsPassable[TILE_EXIT] = true;
+
+		// Sometimes chocoro gets stuck in a wall when entering a new level.
+		// Hopefully this fixes it?
+		for (int i = 0; i < 4; ++i)
+		{
+			for (int y = 0; y < NUM_TILES; ++y)
+			{
+				for (int x = 0; x < NUM_TILES; ++x)
+				{
+					Tile tile = tiles[y][x];
+					if (not TileIsPassable[tile])
+					{
+						Rectangle rect = { (float)(x * TILE_SIZE), (float)(y * TILE_SIZE), TILE_SIZE, TILE_SIZE };
+						ResolveCollisionCircleRect(&chocoro.position, CHOCORO_RADIUS * 1.05f, rect);
+					}
+				}
+			}
+		}
 	}
 	if (gameStateFrame >= LEVEL_TRANSITION_DURATION_FRAMES)
 	{
