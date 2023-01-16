@@ -611,6 +611,33 @@
     <Image Include="pic\level18.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\slime21.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime22.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime23.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime24.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime25.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime26.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime27.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime28.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slime29.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="etc\resources.rc">
