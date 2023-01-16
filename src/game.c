@@ -4,9 +4,9 @@
 // [ ] fix getting stuck when entering levels
 // [ ] fix text highlighting in browser
 // [ ] fix screen size on phones
-// [ ] fix old trampoline and slime tiles in some levels
-// [ ] add corner slime tile for some levels
-// [ ] add different entrance and exit directions
+// [+] fix old trampoline and slime tiles in some levels
+// [+] add corner slime tile for some levels
+// [+] add different entrance and exit directions
 // [ ] add red entrance and exit variants
 // [ ] try no freeze frames
 // [-] squash (it doesn't look nice)
@@ -275,7 +275,7 @@ Sound thunder0Sound;
 Sound thunder1Sound;
 Music music;
 
-// Tile
+// Helpers
 
 void UpdateEntranceAndExitPassable(void)
 {
@@ -304,9 +304,6 @@ void UpdateEntranceAndExitPassable(void)
 	if (numEnemies <= 0)
 		TileIsPassable[TILE_EXIT] = true;
 }
-
-// Helpers
-
 void FillTilesRect(int x0, int y0, int x1, int y1, Tile tile, int variant)
 {
 	x0 = ClampInt(x0, 0, NUM_TILES - 1);
@@ -1863,6 +1860,8 @@ void Splash_Init(void)
 	splashScreenState = 0;
 	ZeroArray(splashRoutines);
 	RingClear(&chocoro.trail);
+	chocoro.zapReady = false;
+	chocoro.zapFrames = 0;
 	bestFramesPlaying = LoadIniInt("BestTimeInFrames", INT_MAX);
 	splashClickCount = 0;
 }

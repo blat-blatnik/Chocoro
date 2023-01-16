@@ -638,6 +638,24 @@
     <Image Include="res\slime29.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\entrance1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\entrance2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\entrance3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\exit1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\exit2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\exit3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="etc\resources.rc">

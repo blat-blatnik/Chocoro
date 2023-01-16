@@ -33,7 +33,6 @@
 // Constants
 
 #define FPS 60
-#define DELTA_TIME (1.0f / FPS)
 #define SCREEN_SIZE 256
 #define SCREEN_CENTER (SCREEN_SIZE / 2)
 #define SCREEN_RECT ((Rectangle){ 0, 0, SCREEN_SIZE, SCREEN_SIZE })
@@ -410,46 +409,6 @@ bool UiConsole(Rectangle bounds);
 #define RingAdd(pRing, item) (*RingAllocate((pRing)) = (item))
 #define RingForeach(index, ring) for (int index = (ring).tail; index != (ring).head; index = (index + 1) % countof((ring).items))
 #define RingClear(pRing) ((pRing)->head = (pRing)->tail = 0)
-
-// Singly linked list
-
-#define SListPush(head, node) ((node)->next = (head), (head) = (node))
-#define SListPop(head) ((head) ? ((head) = (head)->next) : NULL)
-
-// Doubly linked list
-
-#define DListAdd(head, node){\
-	if (node)\
-	{\
-		if (not (head))\
-		{\
-			(head) = (item);\
-			(item)->Next = (item);\
-			(item)->Prev = (item);\
-		}\
-		else\
-		{\
-			(item)->Next = (head);\
-			(item)->Prev = (head)->Prev;\
-			(head)->Prev = (item);\
-			(item)->Prev->Next = (item); \
-		}\
-	}\
-}
-#define DListRemove(head, node){\
-	if (item)\
-	{\
-		(item)->Prev->Next = (item)->Next;\
-		(item)->Next->Prev = (item)->Prev;\
-		if ((item) == (head))\
-		{\
-			if ((item)->Next == (item))\
-				(head) = NULL;\
-			else\
-				(head) = (item)->Next;\
-		}\
-	}\
-}
 
 // Runtime
 
