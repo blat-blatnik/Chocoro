@@ -2395,8 +2395,8 @@ void StartGameLoop(void)
 {
 	LoadIniFile();
 
-	int width = LoadIniInt("Width", SCREEN_SIZE * 3);
-	int height = LoadIniInt("Height", SCREEN_SIZE * 3);
+	int width = LoadIniInt("Width", 3 * SCREEN_SIZE);
+	int height = LoadIniInt("Height", 3 * SCREEN_SIZE);
 	bool maximized = LoadIniBool("Maximized", false);
 	bool fullscreen = LoadIniBool("Fullscreen", false);
 	
