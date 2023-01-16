@@ -2,7 +2,7 @@
 
 //TODO
 // [ ] controller support
-// [ ] make it easier to unstick from carpets and slime
+// [+] make it easier to unstick from carpets and slime
 // [+] fix getting stuck when entering levels
 // [ ] fix text highlighting in browser
 // [ ] fix screen size on phones
@@ -96,6 +96,9 @@ typedef struct Chocoro {
 	int freezeFrames;
 	int zapFrames;
 	bool hitTileLastFrame;
+	bool isInSlime;
+	int slimeX;
+	int slimeY;
 } Chocoro;
 
 typedef struct Balloon {
@@ -923,14 +926,34 @@ void UpdateChocoro(void)
 			SetMusicVolume(zapSound, zapVolume);
 	}
 
+	bool justDashed = false;
+
 	if (not chocoro.zapFrames)
 		chocoro.velocity.y += GRAVITY;
 	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 	{
 		if (chocoro.dashReady or chocoro.zapReady)
 		{
+			justDashed = true;
 			Vector2 toMouse = Vector2Subtract(Input.mouseUnclampedPosition, chocoro.position);
 			Vector2 dashDirection = Vector2Normalize(toMouse);
+
+			if (chocoro.isInSlime)
+			{
+				Vector2 slimePosition = { (float)chocoro.slimeX + 0.5f, (float)chocoro.slimeY + 0.5f };
+				slimePosition = Vector2Scale(slimePosition, TILE_SIZE);
+				Vector2 toSlime = Vector2Subtract(slimePosition, chocoro.position);
+				toSlime = Vector2Normalize(toSlime);
+
+				float threshold = 0.10f;
+				if (fabsf(dashDirection.y) > fabsf(dashDirection.x) and fabsf(dashDirection.x) < threshold and dashDirection.x * toSlime.x > 0)
+					dashDirection.x = -0.02f * toSlime.x;
+				if (fabsf(dashDirection.x) > fabsf(dashDirection.y) and fabsf(dashDirection.y) < threshold and dashDirection.y * toSlime.y > 0)
+					dashDirection.y = -0.02f * toSlime.y;
+
+				dashDirection = Vector2Normalize(dashDirection);
+			}
+
 			float dashSpeed = chocoro.zapReady ? ZAP_SPEED : DASH_SPEED;
 			float speedInDirection = dashSpeed + fmaxf(0, Vector2DotProduct(dashDirection, chocoro.velocity));
 			chocoro.velocity = Vector2Scale(dashDirection, speedInDirection);
@@ -982,6 +1005,7 @@ void UpdateChocoro(void)
 
 	chocoro.velocity = Vector2ClampValue(chocoro.velocity, 0, MAX_SPEED); // Otherwise weird stuff happens with lots of trampolines :)
 	bool hitTileThisFrame = false;
+	chocoro.isInSlime = false;
 
 	Vector2 remainingMotion = chocoro.velocity;
 	for (int iteration = 0; iteration < 10; ++iteration)
@@ -1102,24 +1126,49 @@ void UpdateChocoro(void)
 				}
 			}
 
+			// If you zap straight into a carpet tile, bounce off of it instead of sticking,
+			// otherwise it feels a bit frustrating.
+			bool bouncyCarpet = justDashed and tile == TILE_CARPET;
+
 			remainingMotion = Vector2Reflect(remainingMotion, normal);
 			chocoro.velocity = Vector2Reflect(chocoro.velocity, normal);
 			if (tile == TILE_SLIME)
+			{
 				chocoro.zapFrames = 0;
+				chocoro.isInSlime = true;
+				chocoro.slimeX = hitTileX;
+				chocoro.slimeY = hitTileY;
+			}
 			if (not chocoro.zapFrames)
 				chocoro.dashReady = true;
-			if (tile == TILE_CARPET)
+			if (tile == TILE_CARPET and not bouncyCarpet)
 				chocoro.zapReady = true;
 
 			Vector2 out = Vector2Normalize(chocoro.velocity);
 			float outAngle = Atan2Vector(out);
 			float directness = Clamp01(Vector2DotProduct(normal, out));
 
-			remainingMotion = Vector2Scale(remainingMotion, 1 - TileFriction[tile]);
-			chocoro.velocity = Vector2Scale(chocoro.velocity, 1 - TileFriction[tile]);
+			float friction = TileFriction[tile];
+			float stickyness = TileStickyness[tile];
+			if (bouncyCarpet)
+			{
+				// Treat tile as a wall so we bounce off.
+				tile = TILE_WALL;
+				friction = TileFriction[TILE_WALL];
+				stickyness = TileStickyness[TILE_WALL];
+			}
+			if (chocoro.zapFrames and tile != TILE_CARPET and tile != TILE_SLIME)
+			{
+				// Reduce friction when zapping to make it feel more powerful.
+				friction *= 0.5f;
+				stickyness *= 0.5f;
+			}
 
-			remainingMotion = Vector2Add(remainingMotion, Vector2Scale(Vector2Negate(normal), TileStickyness[tile]));
-			chocoro.velocity = Vector2Add(chocoro.velocity, Vector2Scale(Vector2Negate(normal), TileStickyness[tile]));
+			remainingMotion = Vector2Scale(remainingMotion, 1 - friction);
+			chocoro.velocity = Vector2Scale(chocoro.velocity, 1 - friction);
+
+			remainingMotion = Vector2Add(remainingMotion, Vector2Scale(Vector2Negate(normal), stickyness));
+			chocoro.velocity = Vector2Add(chocoro.velocity, Vector2Scale(Vector2Negate(normal), stickyness));
 			hitTileThisFrame = true;
 
 			camera.trauma += Clamp(0.1f * (magnitude - 1.2f) * directness, 0, 0.4f);
@@ -1862,6 +1911,8 @@ void Splash_Init(void)
 	RingClear(&chocoro.trail);
 	chocoro.zapReady = false;
 	chocoro.zapFrames = 0;
+	chocoro.hitTileLastFrame = false;
+	chocoro.isInSlime = false;
 	bestFramesPlaying = LoadIniInt("BestTimeInFrames", INT_MAX);
 	splashClickCount = 0;
 }
