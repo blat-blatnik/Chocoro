@@ -2242,7 +2242,7 @@ void OneGameLoopIteration(void)
 	// Stretch the framebuffer over the available window area.
 	BeginDrawing();
 	{
-		ClearBackground(BLACK);
+		ClearBackground((Color){ 28, 23, 30, 255 });
 
 		// For some reason we need to Y-flip the framebuffer.
 		Rectangle src = { 0, 0, SCREEN_SIZE, -1 * SCREEN_SIZE };
@@ -2395,8 +2395,8 @@ void StartGameLoop(void)
 {
 	LoadIniFile();
 
-	int width = LoadIniInt("Width", 3 * SCREEN_SIZE);
-	int height = LoadIniInt("Height", 3 * SCREEN_SIZE);
+	int width = LoadIniInt("Width", 3 * SCREEN_SIZE + 32);
+	int height = LoadIniInt("Height", 3 * SCREEN_SIZE + 32);
 	bool maximized = LoadIniBool("Maximized", false);
 	bool fullscreen = LoadIniBool("Fullscreen", false);
 	

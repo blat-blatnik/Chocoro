@@ -2,6 +2,7 @@
 
 //TODO
 // [ ] controller support
+// [+] make default window size bigger to reduce clicks outside of window
 // [+] make it easier to unstick from carpets and slime
 // [+] fix getting stuck when entering levels
 // [ ] fix text highlighting in browser
